@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %}</title>
+        <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='theme.css') }}" rel="stylesheet">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='buddha.png') }}">
+
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ url_for('index') }}">Therapeutic Corner</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                {% block nav %}{% endblock %}
+                </div>
+            </div> 
+        </nav>
+
+        <div class="container theme-showcase" role="main">
+
+        {% block body %}{% endblock %}
+        </div> 
+    </body>
+</html>
